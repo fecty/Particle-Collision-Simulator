@@ -56,10 +56,11 @@ public:
                                 static_cast<float>(std::rand() % 200 - 100) / 100.f);
         acceleration = sf::Vector2f(0.f, 0.f);
 
-        shape.setRadius(4.f);
+        shape.setRadius(2.f);
         shape.setFillColor(flockColors[flockID % flockColors.size()]);
         shape.setOrigin({4.f, 4.f});
         shape.setPosition(position);
+        shape.setPointCount(3);
     }
 
     void applyForce(const sf::Vector2f &force)

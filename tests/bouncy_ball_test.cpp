@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
@@ -9,6 +10,9 @@
 #define INITIAL_SPEEDX 0
 #define INITIAL_SPEEDY 0
 #define BALL_SCALE .15f
+#define BALL_TEXTURE_FILE "resources\\ball.png"
+#define FONT_FILE "resources\\OpenSans.ttf"
+
 main()
 {
 
@@ -20,7 +24,9 @@ main()
     // Window Configuration
     window.setFramerateLimit(FRAMERATE);
 
-    sf::Texture ballTexture("imgs\\ball.png");
+    sf::Font font(FONT_FILE);
+
+    sf::Texture ballTexture(BALL_TEXTURE_FILE);
     ballTexture.setSmooth(true);
     sf::Sprite ballSprite(ballTexture);
     auto [ballWidth, ballHeight] = ballTexture.getSize();
@@ -31,6 +37,16 @@ main()
     short ballDirY = 1;
     float ballSpeedX = INITIAL_SPEEDX;
     float ballSpeedY = INITIAL_SPEEDY;
+    double speedMag = 0;
+
+    sf::Text speedText(font);
+    speedText.setString("speed: ");
+    speedText.setFillColor(sf::Color::Black);
+    speedText.setCharacterSize(20);
+    speedText.setStyle(sf::Text::Bold);
+    speedText.setPosition({0, 0});
+    // speedText.setOutlineThickness(2.f);
+    // speedText.setOutlineColor(sf::Color::Red);
 
     // Events
     const auto onClose = [&window](sf::Event::Closed)
@@ -113,8 +129,14 @@ main()
 
         ballSprite.setPosition({ballX + ballDirX * ballSpeedX, ballY + ballDirY * ballSpeedY});
 
+        // Alter speedText
+
+        speedMag = round(sqrt(pow(ballSpeedX, 2) + pow(ballSpeedY, 2)));
+
+        speedText.setString("speed(x): " + std::to_string(ballSpeedX) + "\nspeed(y): " + std::to_string(ballSpeedY));
         // Draw Stuff
         window.draw(ballSprite);
+        window.draw(speedText);
 
         // Display to window
         window.display();
