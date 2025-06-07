@@ -13,7 +13,7 @@
 #define PARTICLE_COLOR sf::Color::Red
 #define PARTICLE_POINT_COUNT 10
 #define PARTICLE_NUMBER 100
-#define SPEED_FACTOR 5
+#define SPEED_FACTOR 3
 
 sf::Color colors[10] = {
     sf::Color(255, 99, 71),   // Tomato Red
