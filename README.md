@@ -108,3 +108,7 @@ The `resources/` directory contains the following assets:
 - Ensure that the SFML static libraries and headers are correctly placed in the `SFML-3.0.0` directory. This directory is excluded from version control.
 - Adjust include and library paths in the build commands as necessary for your environment.
 - The `tasks.json` file is configured to build and run the currently open file. Modify it to suit your specific needs.
+- "bin/*.exe", "winlabs-mingw64", "SFML-3.0.0" and ".vscode" are excluded files/folders.
+
+
+
