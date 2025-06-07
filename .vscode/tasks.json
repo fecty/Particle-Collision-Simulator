@@ -1,0 +1,55 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "bin\\g++",
+      "args": [
+        "-std=c++17",
+        "-static",
+        "-DSFML_STATIC",
+        // "../src/main.cpp",
+        "..\\${relativeFile}",
+        "-I../SFML-3.0.0/include",
+        "-L../SFML-3.0.0/lib",
+        "-lsfml-graphics-s",
+        "-lsfml-window-s",
+        "-lsfml-system-s",
+        "-lopengl32",
+        "-lfreetype",
+        "-lwinmm",
+        "-lgdi32",
+        "-o",
+        "../bin/${fileBasenameNoExtension}.exe"
+        // "../bin/program.exe"
+        // "-Wl,--verbose"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/winlabs-mingw64"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run",
+      "type": "shell",
+      "command": ".\\bin\\${fileBasenameNoExtension}.exe",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build and Run",
+      "dependsOn": ["Build", "Run"],
+      "dependsOrder": "sequence"
+    }
+  ]
+}
