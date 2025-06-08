@@ -29,7 +29,7 @@ This project showcases various features of the [SFML 3.0.0](https://www.sfml-dev
   - `tasks.json`: Defines build and run tasks for VS Code.
   - `settings.json`: Defines VS Code settings for the project, including file associations.
 - `.gitignore`: Specifies intentionally untracked files that Git should ignore.
-- `resources/`: Contains assets such as fonts and textures.
+- `assets/`: Contains assets such as fonts and textures.
 
 ## Building
 
@@ -98,7 +98,7 @@ The `src/main.cpp` file contains a particle collision simulation. It creates a w
 
 ## Resources and Assets
 
-The `resources/` directory contains the following assets:
+The `assets/` directory contains the following assets:
 
 - `OpenSans.ttf`: A font file used for displaying text in the `font_test.cpp` and `bouncy_ball_test.cpp` files.
 - `ball.png`: A texture used for the bouncy ball sprite in `bouncy_ball_test.cpp`.
