@@ -51,7 +51,7 @@ main()
     window.setFramerateLimit(FRAMERATE);
 
     // User Definitions
-    sf::Font font("resources\\OpenSans.ttf");
+    sf::Font font("assets\\OpenSans.ttf");
 
     sf::CircleShape particles[PARTICLE_NUMBER];
 

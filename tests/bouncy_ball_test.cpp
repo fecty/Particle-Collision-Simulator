@@ -10,8 +10,8 @@
 #define INITIAL_SPEEDX 0
 #define INITIAL_SPEEDY 0
 #define BALL_SCALE .15f
-#define BALL_TEXTURE_FILE "resources\\ball.png"
-#define FONT_FILE "resources\\OpenSans.ttf"
+#define BALL_TEXTURE_FILE "assets\\ball.png"
+#define FONT_FILE "assets\\OpenSans.ttf"
 
 main()
 {

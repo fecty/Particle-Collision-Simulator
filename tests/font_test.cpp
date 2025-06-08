@@ -22,7 +22,7 @@ int main()
         window.close();
     };
 
-    sf::Font font("resources\\OpenSans.ttf");
+    sf::Font font("assets\\OpenSans.ttf");
 
     sf::Text text(font);
     text.setString("Hello World");
