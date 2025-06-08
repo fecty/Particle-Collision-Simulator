@@ -17,7 +17,7 @@ main()
 {
 
     sf::RenderWindow window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}),
-                            "Render Window Test",
+                            "Bouncy Ball",
                             sf::Style::Close | sf::Style::Titlebar,
                             sf::State::Windowed);
 

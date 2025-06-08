@@ -10,7 +10,7 @@ int main()
     unsigned int window_height = 600;
 
     sf::RenderWindow window(sf::VideoMode({window_width, window_height}),
-                            "Render Window",
+                            "Rotating Square",
                             sf::Style::Default,
                             sf::State::Windowed);
 

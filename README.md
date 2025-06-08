@@ -5,7 +5,7 @@ This project showcases various features of the [SFML 3.0.0](https://www.sfml-dev
 ## Requirements
 
 - SFML 3.0.0 (static libraries)
-- MinGW-w64 (for Windows, with g++)
+- [winlibs-mingw64](https://winlibs.com/) (for Windows, with g++)
 - C++17 or newer
 - VS Code (optional, for using provided tasks)
 
@@ -33,7 +33,7 @@ This project showcases various features of the [SFML 3.0.0](https://www.sfml-dev
 
 ## Building
 
-The project uses a `tasks.json` file for building within VS Code. Alternatively, you can build from the command line using `g++`.
+The project uses a `tasks.json` file for building within VS Code. Alternatively, you can build from the command line using `g++` provided by [winlibs-mingw64](https://winlibs.com/).
 
 ### Building with VS Code
 
@@ -109,6 +109,7 @@ The `resources/` directory contains the following assets:
 - Adjust include and library paths in the build commands as necessary for your environment.
 - The `tasks.json` file is configured to build and run the currently open file. Modify it to suit your specific needs.
 - "winlabs-mingw64" and "SFML-3.0.0" are excluded files/folders.
+- The `c_cpp_properties.json` file contains configurations for IntelliSense.  Ensure the `compilerPath` is correctly set to your MinGW-w64 g++ executable (e.g., `C:\\Code\\mingw64\\bin\\gcc.exe`).
 
 
 
